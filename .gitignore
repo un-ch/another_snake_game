@@ -8,3 +8,5 @@
 !*.h
 !screenshot.png
 !*/
+!docs/doxygen/another_snake_game.conf
+!docs/doxygen/main.dox
