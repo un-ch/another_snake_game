@@ -35,17 +35,17 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/%.h
 	@$(CC) $(CFLAGS)$(INCLUDE_DIR) -c $< -o $@
 
 # targets:
-another_simple_snake_game: $(SRC_DIR)/another_simple_snake_game.c -lncurses \
+another_snake_game: $(SRC_DIR)/another_snake_game.c -lncurses \
 	$(OBJECT_FILES)
 	@$(CC) $(CFLAGS) $(INCLUDE_DIR) $^ -o $(BUILD_DIR)/$@
 
 .PHONY: run
-run: another_simple_snake_game
-	@./$(BUILD_DIR)/another_simple_snake_game
+run: another_snake_game
+	@./$(BUILD_DIR)/another_snake_game
 
 .PHONY: clean
 clean:
-	@rm -f	$(BUILD_DIR)/*.o $(BUILD_DIR)/another_simple_snake_game
+	@rm -f	$(BUILD_DIR)/*.o $(BUILD_DIR)/another_snake_game
 
 .PHONY: delete_files
 delete_files:
