@@ -1,8 +1,7 @@
-# The gitignore file specifies intentionally untracked files that Git
-# should ignore.
+# The gitignore file specifies intentionally untracked files that Git should ignore.
 #
 *
-# except this files:
+# except these files:
 !Makefile
 !*.c
 !*.h
