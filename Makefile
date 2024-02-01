@@ -31,7 +31,3 @@ run: another_snake_game
 .PHONY: clean
 clean:
 	@rm -f	$(BUILD_DIR)/*.o $(BUILD_DIR)/another_snake_game
-
-.PHONY: delete_files
-delete_files:
-	@rm -f	$(BUILD_DIR)/* $(SRC_DIR)/* $(INCLUDE_DIR)/*
