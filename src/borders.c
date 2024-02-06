@@ -4,8 +4,7 @@
 #include "string.h"
 #include "color.h"
 
-void
-display_borders_with_game_title()
+void display_borders_with_game_title(void)
 {
 	const char *game_title = "Simple Snake Game";
 	int max_screen_width;
@@ -20,12 +19,10 @@ display_borders_with_game_title()
 	str_length = string_length(game_title);
 	cursor_width_coordinate = (max_screen_width - str_length) / 2;
 
-	mvwprintw(stdscr, cursor_height_coordinate, cursor_width_coordinate,\
-																									" %s ", game_title);
+	mvwprintw(stdscr, cursor_height_coordinate, cursor_width_coordinate," %s ", game_title);
 }
 
-int
-is_contact_with_borders(const struct coordinates snake_head)
+int is_contact_with_borders(const struct coordinates snake_head)
 {
 	int result = FALSE;
 	int min_x = 1;
