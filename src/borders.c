@@ -28,6 +28,7 @@ void display_borders_with_game_title(void)
 	wrefresh(game_border);
 
 	set_color(magenta_on_black);
+
 	/* print the game title in the middle of the top border: */
 	mvwprintw(stdscr, g_screen.begin_y, (border_column_num / 2), " %s ", game_title);
 }
