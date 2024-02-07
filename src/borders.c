@@ -10,14 +10,9 @@ extern screen g_screen;
 void display_borders_with_game_title(void)
 {
 	const char *game_title = "Simple Snake Game";
-	int max_screen_width;
-	int str_length;
-	int cursor_width_coordinate;
-	int cursor_height_coordinate = 0;
 	int border_lines_num, border_column_num;
 
 	set_color(black_on_white);
-
 	set_screen_parametres();
 
 	border_lines_num = g_screen.end_y - g_screen.begin_y;
@@ -31,13 +26,10 @@ void display_borders_with_game_title(void)
 
 	box(game_border, 0, 0);
 	wrefresh(game_border);
-	sleep(100);
 
-	max_screen_width = getmaxx(stdscr);
-	str_length = string_length(game_title);
-	cursor_width_coordinate = (max_screen_width - str_length) / 2;
-
-	mvwprintw(stdscr, cursor_height_coordinate, cursor_width_coordinate," %s ", game_title);
+	set_color(magenta_on_black);
+	/* print the game title in the middle of the top border: */
+	mvwprintw(stdscr, g_screen.begin_y, (border_column_num / 2), " %s ", game_title);
 }
 
 int is_contact_with_borders(const struct coordinates snake_head)
