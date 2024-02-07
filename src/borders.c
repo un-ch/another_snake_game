@@ -3,6 +3,9 @@
 #include "borders.h"
 #include "string.h"
 #include "color.h"
+#include "screen.h"
+
+extern screen g_screen;
 
 void display_borders_with_game_title(void)
 {
@@ -11,9 +14,24 @@ void display_borders_with_game_title(void)
 	int str_length;
 	int cursor_width_coordinate;
 	int cursor_height_coordinate = 0;
+	int border_lines_num, border_column_num;
 
 	set_color(black_on_white);
-	box(stdscr, 0, 0);
+
+	set_screen_parametres();
+
+	border_lines_num = g_screen.end_y - g_screen.begin_y;
+	border_column_num = g_screen.end_x - g_screen.begin_x;
+
+	WINDOW *game_border = newwin(
+		border_lines_num,
+		border_column_num,
+		g_screen.begin_y,
+		g_screen.begin_x);
+
+	box(game_border, 0, 0);
+	wrefresh(game_border);
+	sleep(100);
 
 	max_screen_width = getmaxx(stdscr);
 	str_length = string_length(game_title);
