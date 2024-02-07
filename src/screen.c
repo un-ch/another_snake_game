@@ -5,8 +5,17 @@
 #include "borders.h"
 #include "color.h"
 
-void
-clear_screen()
+screen g_screen;
+
+void set_screen_parametres(void)
+{
+	g_screen.begin_x = getmaxx(stdscr) / 15;
+	g_screen.begin_y = getmaxy(stdscr) / 50;
+	g_screen.end_x = (getmaxx(stdscr) / 3) * 2;
+	g_screen.end_y = getmaxy(stdscr);
+}
+
+void clear_screen(void)
 {
 	int max_screen_height, max_screen_width;
 	int screen_height = 1;
