@@ -37,7 +37,7 @@ display_barrier_in_fog_of_war(struct coordinates snake_head,
 			(temp->coord.y < y_max) &&
 			(temp->coord.x > x_min) &&
 			(temp->coord.y > y_min)) {
-				show_object_barrier(temp->coord);
+				display_object(barrier_obj, temp->coord);
 		}
 		temp = temp->next;
 	}
