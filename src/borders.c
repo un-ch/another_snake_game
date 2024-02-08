@@ -36,18 +36,15 @@ void display_borders_with_game_title(void)
 int is_contact_with_borders(const struct coordinates snake_head)
 {
 	int result = FALSE;
-	int min_x = 1;
-	int min_y = 1;
-	int max_x, max_y;
-
-	getmaxyx(stdscr, max_y, max_x);
-	max_y -= 2;
-	max_x -= 2;
-
-	if((snake_head.x < min_x)
-		|| (snake_head.x > max_x)
-		|| (snake_head.y < min_y)
-		|| (snake_head.y > max_y)) {
+	int min_screen_pixel_x = g_screen.begin_x + 2;
+	int min_screen_pixel_y = g_screen.begin_y + 2;
+	int max_screen_pixel_x = g_screen.end_x - 2;
+	int max_screen_pixel_y = g_screen.end_y - 2;
+	
+	if((snake_head.x < min_screen_pixel_x)
+		|| (snake_head.x > max_screen_pixel_x)
+		|| (snake_head.y < min_screen_pixel_y)
+		|| (snake_head.y > max_screen_pixel_y)) {
 		result = TRUE;
 	}
 
