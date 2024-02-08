@@ -7,8 +7,7 @@
 
 extern screen g_screen;
 
-void
-set_random_coordinates(struct coordinates *crd)
+void set_random_coordinates(struct coordinates *crd)
 {
 	int min_x = 1;
 	int min_y = 1;
@@ -30,9 +29,7 @@ set_random_coordinates(struct coordinates *crd)
 	crd->y = get_random_int_number(min_y, max_y);
 }
 
-int
-is_equal_coordinates(const struct coordinates crd,
-				const struct coordinates crd_pattern)
+int is_equal_coordinates(const struct coordinates crd, const struct coordinates crd_pattern)
 {
 	int result = TRUE;
 
@@ -45,9 +42,8 @@ is_equal_coordinates(const struct coordinates crd,
 	return result;
 }
 
-struct coordinates_list *
-fill_in_coordinates_random(const int max_iterator,
-				const struct coordinates snake_head)
+struct coordinates_list *fill_in_coordinates_random(const int max_iterator,
+	const struct coordinates snake_head)
 {
 	struct coordinates_list *first = NULL, *temp;
 	int i = 0;
@@ -66,8 +62,7 @@ fill_in_coordinates_random(const int max_iterator,
 	return first;
 }
 
-void
-delete_coordinate_list(struct coordinates_list **list)
+void delete_coordinate_list(struct coordinates_list **list)
 {
 	while(*list) {
 		struct coordinates_list *temp = *list;
@@ -76,8 +71,7 @@ delete_coordinate_list(struct coordinates_list **list)
 	}
 }
 
-void
-delete_coordinate_doubly_list(struct coordinates_doubly_list **list)
+void delete_coordinate_doubly_list(struct coordinates_doubly_list **list)
 {
 	while(*list) {
 		struct coordinates_doubly_list *temp = *list;
