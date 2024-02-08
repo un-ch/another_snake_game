@@ -4,9 +4,7 @@
 #include "coordinates.h"
 #include "objects.h"
 
-int
-is_contact_with_target(const struct coordinates crd,
-					struct coordinates_list *target)
+int is_contact_with_target(const struct coordinates crd, struct coordinates_list *target)
 {
 	struct coordinates_list **pp = &target;
 	int result = FALSE;
@@ -25,9 +23,7 @@ is_contact_with_target(const struct coordinates crd,
 	return result;
 }
 
-void
-display_target_in_fog_of_war(struct coordinates snake,
-						struct coordinates_list *target)
+void display_target_in_fog_of_war(struct coordinates snake, struct coordinates_list *target)
 {
 	struct coordinates_list *temp = target;
 	int x_max, x_min, y_max, y_min;
@@ -48,8 +44,7 @@ display_target_in_fog_of_war(struct coordinates snake,
 	}
 }
 
-void
-display_target(struct coordinates_list *target)
+void display_target(struct coordinates_list *target)
 {
 	struct coordinates_list *temp = target;
 
