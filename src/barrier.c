@@ -2,9 +2,7 @@
 #include "coordinates.h"
 #include "objects.h"
 
-int
-is_contact_with_barrier(const struct coordinates snake_head,
-						const struct coordinates_list *barrier)
+int is_contact_with_barrier(const struct coordinates snake_head, const struct coordinates_list *barrier)
 {
 	const struct coordinates_list *temp = barrier;
 	int result = FALSE;
@@ -20,9 +18,7 @@ is_contact_with_barrier(const struct coordinates snake_head,
 	return result;
 }
 
-void
-display_barrier_in_fog_of_war(struct coordinates snake_head,
-							struct coordinates_list *barrier)
+void display_barrier_in_fog_of_war(struct coordinates snake_head, struct coordinates_list *barrier)
 {
 	struct coordinates_list *temp = barrier;
 	int x_max, x_min, y_max, y_min;
@@ -43,8 +39,7 @@ display_barrier_in_fog_of_war(struct coordinates snake_head,
 	}
 }
 
-void
-display_barrier(struct coordinates_list *barrier)
+void display_barrier(struct coordinates_list *barrier)
 {
 	struct coordinates_list *temp = barrier;
 
