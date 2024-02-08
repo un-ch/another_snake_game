@@ -46,23 +46,23 @@ display_object(enum object obj, const struct coordinates crd)
 	move(crd.y, crd.x);
 	switch(obj) {
 		case target_obj:
-			set_color(black_on_white);
+			set_color(white_on_black);
 			addch(symbol_target);
 			break;
 		case snake_obj:
-			set_color(red_on_white);
+			set_color(red_on_black);
 			addch(symbol_snake);
 			break;
 		case barrier_obj:
-			set_color(black_on_white);
+			set_color(green_on_black);
 			addch(symbol_barrier);
 			break;
 		case blank_obj:
-			set_color(black_on_white);
+			set_color(black_on_black);
 			addch(symbol_blank);
 			break;
 		case dot_obj:
-			set_color(black_on_white);
+			set_color(black_on_black);
 			addch(symbol_dot);
 			break;
 	}
