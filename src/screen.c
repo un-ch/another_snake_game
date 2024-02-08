@@ -17,21 +17,19 @@ void set_screen_parametres(void)
 
 void clear_screen(void)
 {
-	int max_screen_height, max_screen_width;
-	int screen_height = 1;
-	int screen_width = 1;
+	int screen_pixel_x;
+	int screen_pixel_y = g_screen.begin_y + 1;
+	struct coordinates crd;
 
 	clear();
 	refresh();
 	display_borders_with_game_title();
 
-	getmaxyx(stdscr, max_screen_height, max_screen_width);
-	set_color(white_on_white);
-
-	for(; screen_height < (max_screen_height - 1); screen_height++) {
-		for(screen_width = 1; screen_width < (max_screen_width - 1); screen_width++) {
-			move(screen_height, screen_width);
-			addch(symbol_blank);
+	for(; screen_pixel_y < (g_screen.end_y - 1); screen_pixel_y++) {
+		for(screen_pixel_x = g_screen.begin_x + 1; screen_pixel_x < (g_screen.end_x - 1); screen_pixel_x++) {
+			crd.y = screen_pixel_y;
+			crd.x = screen_pixel_x;
+			display_object(blank_obj, crd);
 		}
 	}
 }
