@@ -3,6 +3,9 @@
 
 #include "coordinates.h"
 #include "get_random_number.h"
+#include "screen.h"
+
+extern screen g_screen;
 
 void
 set_random_coordinates(struct coordinates *crd)
