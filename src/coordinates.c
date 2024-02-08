@@ -11,8 +11,8 @@ void set_random_coordinates(struct coordinates *crd)
 {
 	int min_screen_pixel_x = g_screen.begin_x + 1;
 	int min_screen_pixel_y = g_screen.begin_y + 1;
-	int max_screen_pixel_x = g_screen.end_x - 1;
-	int max_screen_pixel_y = g_screen.end_y - 1;
+	int max_screen_pixel_x = g_screen.end_x - 11;
+	int max_screen_pixel_y = g_screen.end_y - 2;
 
 	/* we assume that there is no opportunity to display symbols
 	 * in (max_screen_pixel_y, max_screen_pixel_x) screen coordinates;
@@ -21,8 +21,6 @@ void set_random_coordinates(struct coordinates *crd)
 	 * so, objects inside the borders should have next maximum
 	 * values:
 	 */
-	max_screen_pixel_x -= 1;
-	max_screen_pixel_y -= 1;
 
 	crd->x = get_random_int_number(min_screen_pixel_x, max_screen_pixel_x);
 	crd->y = get_random_int_number(min_screen_pixel_y, max_screen_pixel_y);
@@ -41,7 +39,8 @@ int is_equal_coordinates(const struct coordinates crd, const struct coordinates 
 	return result;
 }
 
-struct coordinates_list *fill_in_coordinates_random(const int max_iterator,
+struct coordinates_list *fill_in_coordinates_random(
+	const int max_iterator,
 	const struct coordinates snake_head)
 {
 	struct coordinates_list *first = NULL, *temp;
