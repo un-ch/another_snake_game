@@ -49,7 +49,7 @@ display_barrier(struct coordinates_list *barrier)
 	struct coordinates_list *temp = barrier;
 
 	while(temp) {
-		show_object_barrier(temp->coord);
+		display_object(barrier_obj, temp->coord);
 		temp = temp->next;
 	}
 }
