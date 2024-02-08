@@ -15,14 +15,14 @@ move_snake_object(struct coordinates_deque *snake,
 	if((direction.x == 0) &&
 		(direction.y == 0)) {
 		while(temp) {
-			show_object_snake(temp->coord);
+			display_object(snake_obj, temp->coord);
 			temp = temp->next;
 		}
 		return;
 	}
 
 	while(temp) {
-		hide_object(temp->coord);
+		display_object(blank_obj, temp->coord);
 		temp = temp->next;
 	}
 
@@ -39,7 +39,7 @@ move_snake_object(struct coordinates_deque *snake,
 
 	temp = snake->first;
 	while(temp) {
-		show_object_snake(temp->coord);	
+		display_object(snake_obj, temp->coord);	
 		temp = temp->next;
 	}
 }
