@@ -10,12 +10,12 @@
 #include "screen.h"
 #include "dot_background.h"
 
-void
-set_objects_another_round(struct coordinates_deque *snake,
-						struct coordinates_list **target,
-						struct coordinates_list **barrier,
-						const struct round_settings rnd_stt,
-						struct coordinates *crd)
+void set_objects_another_round(
+		struct coordinates_deque *snake,
+		struct coordinates_list **target,
+		struct coordinates_list **barrier,
+		const struct round_settings rnd_stt,
+		struct coordinates *crd)
 {
 	struct coordinates snake_head;
 
