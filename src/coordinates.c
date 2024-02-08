@@ -9,24 +9,23 @@ extern screen g_screen;
 
 void set_random_coordinates(struct coordinates *crd)
 {
-	int min_x = 1;
-	int min_y = 1;
-	int max_x, max_y;
-
-	getmaxyx(stdscr, max_y, max_x);
+	int min_screen_pixel_x = g_screen.begin_x + 1;
+	int min_screen_pixel_y = g_screen.begin_y + 1;
+	int max_screen_pixel_x = g_screen.end_x - 1;
+	int max_screen_pixel_y = g_screen.end_y - 1;
 
 	/* we assume that there is no opportunity to display symbols
-	 * in (max_y, max_x) screen coordinates;
-	 * borders around the game field holds the (max_y-1, max_x-1)
+	 * in (max_screen_pixel_y, max_screen_pixel_x) screen coordinates;
+	 * borders around the game field holds the (max_screen_pixel_y-1, max_screen_pixel_x-1)
 	 * coordinates;
 	 * so, objects inside the borders should have next maximum
 	 * values:
 	 */
-	max_x -= 2;
-	max_y -= 2;
+	max_screen_pixel_x -= 1;
+	max_screen_pixel_y -= 1;
 
-	crd->x = get_random_int_number(min_x, max_x);
-	crd->y = get_random_int_number(min_y, max_y);
+	crd->x = get_random_int_number(min_screen_pixel_x, max_screen_pixel_x);
+	crd->y = get_random_int_number(min_screen_pixel_y, max_screen_pixel_y);
 }
 
 int is_equal_coordinates(const struct coordinates crd, const struct coordinates crd_pattern)
