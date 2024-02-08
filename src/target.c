@@ -54,7 +54,7 @@ display_target(struct coordinates_list *target)
 	struct coordinates_list *temp = target;
 
 	while(temp) {
-		show_object_target(temp->coord);
+		display_object(target_obj, temp->coord);
 		temp = temp->next;
 	}
 }
