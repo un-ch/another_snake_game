@@ -7,7 +7,7 @@
 #include "display_message.h"
 #include "snake_object.h"
 #include "target.h"
-#include "screen.h"
+#include "game_field.h"
 #include "dot_background.h"
 
 void set_objects_another_round(
@@ -32,7 +32,6 @@ void set_objects_another_round(
 	crd->x = 0;
 	crd->y = 0;
 
-	clear_screen();
 	display_round_number(rnd_stt.round_num);
 	set_random_coordinates(&snake_head);
 	add_new_snake_element(snake, snake_head);
