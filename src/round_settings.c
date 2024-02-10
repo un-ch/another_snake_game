@@ -14,7 +14,7 @@ void set_objects_another_round(
 		struct coordinates_deque *snake,
 		struct coordinates_list **target,
 		struct coordinates_list **barrier,
-		const struct round_settings rnd_stt,
+		const round_settings rnd_stt,
 		struct coordinates *crd)
 {
 	struct coordinates snake_head;
@@ -40,8 +40,7 @@ void set_objects_another_round(
 	display_dot_background();
 }
 
-void
-set_settings_initial_round(struct round_settings *rnd_stt)
+void set_settings_initial_round(round_settings *rnd_stt)
 {
 	int max_screen_value_x, max_screen_value_y;
 	int barrier_amount;
@@ -54,8 +53,7 @@ set_settings_initial_round(struct round_settings *rnd_stt)
 	rnd_stt->max_barrier_amount = barrier_amount;
 }
 
-void
-game_settings_increase(struct round_settings *rnd_stt)
+void game_settings_increase(round_settings *rnd_stt)
 {
 	rnd_stt->round_num += 1;
 	rnd_stt->current_snake_length = 1;
@@ -63,8 +61,7 @@ game_settings_increase(struct round_settings *rnd_stt)
 	rnd_stt->max_barrier_amount += 150;
 }
 
-void
-game_settings_decrease(struct round_settings *rnd_stt)
+void game_settings_decrease(round_settings *rnd_stt)
 {
 	rnd_stt->round_num -= 1;
 	rnd_stt->current_snake_length = 1;
@@ -72,8 +69,7 @@ game_settings_decrease(struct round_settings *rnd_stt)
 	rnd_stt->max_barrier_amount -= 150;
 }
 
-void
-update_after_contact_with_target(struct round_settings *rnd_stt,
+void update_after_contact_with_target(round_settings *rnd_stt,
 								struct coordinates_deque *snake,
 										struct coordinates crd)
 {
