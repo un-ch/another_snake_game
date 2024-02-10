@@ -10,25 +10,22 @@ typedef struct {
 	int max_barrier_amount;
 } round_settings; 
 
-void
-set_objects_another_round(struct coordinates_deque *snake,
-						struct coordinates_list **target,
-						struct coordinates_list **barrier,
-						const struct round_settings rnd_stt,
-						struct coordinates *crd);
+void set_objects_another_round(
+	struct coordinates_deque *snake,
+	struct coordinates_list **target,
+	struct coordinates_list **barrier,
+	const round_settings rnd_stt,
+	struct coordinates *crd);
 
-void
-set_settings_initial_round(struct round_settings *rnd_stt);
+void set_settings_initial_round(round_settings *rnd_stt);
 
-void
-game_settings_increase(struct round_settings *rnd_stt);
+void game_settings_increase(round_settings *rnd_stt);
 
-void
-game_settings_decrease(struct round_settings *rnd_stt);
+void game_settings_decrease(round_settings *rnd_stt);
 
-void
-update_after_contact_with_target(struct round_settings *rnd_stt,
-								struct coordinates_deque *snake,
-								struct coordinates crd);
+void update_after_contact_with_target(
+	round_settings *rnd_stt,
+	struct coordinates_deque *snake,
+	struct coordinates crd);
 
 #endif
