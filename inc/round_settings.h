@@ -1,14 +1,14 @@
-#ifndef ROUND_SETTINGS_H_SENTRY
-#define ROUND_SETTINGS_H_SENTRY
+#ifndef ROUND_SETTINGS_H
+#define ROUND_SETTINGS_H
 
 #include "coordinates.h"
 
-struct round_settings {
+typedef struct {
 	int round_num;
 	int current_snake_length;
 	int snake_speed;
 	int max_barrier_amount;
-};
+} round_settings; 
 
 void
 set_objects_another_round(struct coordinates_deque *snake,
