@@ -8,7 +8,7 @@ typedef struct {
 	int end_y;
 } game_field;
 
-void set_screen_parametres(void);
+void set_game_field_parametres(void);
 void clear_screen(void);
 
 #endif

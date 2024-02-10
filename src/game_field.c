@@ -7,7 +7,7 @@
 
 game_field g_game_field;
 
-void set_screen_parametres(void)
+void set_game_field_parametres(void)
 {
 	g_game_field.begin_x = getmaxx(stdscr) / 15;
 	g_game_field.begin_y = getmaxy(stdscr) / 50;
