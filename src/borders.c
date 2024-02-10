@@ -12,9 +12,9 @@ void display_borders_with_game_title(void)
 	const char *game_title = "Simple Snake Game";
 	int border_row_count, border_column_count;
 
-	set_screen_parametres();
+	set_game_field_parametres();
 
-	border_row_count = 10;//g_game_field.end_y - g_game_field.begin_y;
+	border_row_count = g_game_field.end_y - g_game_field.begin_y;
 	border_column_count = g_game_field.end_x - g_game_field.begin_x;
 
 	WINDOW *game_border = newwin(
