@@ -21,13 +21,9 @@ enum object {
 };
 
 void show_object_target(const struct coordinates crd);
-
 void show_object_snake(const struct coordinates crd);
-
 void show_object_barrier(const struct coordinates crd);
-
 void hide_object(const struct coordinates crd);
-
 void display_object(enum object obj, const struct coordinates crd);
 
 #endif
