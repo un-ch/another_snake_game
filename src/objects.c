@@ -3,6 +3,7 @@
 #include "objects.h"
 #include "coordinates.h"
 #include "color.h"
+#include "display_message.h"
 
 void 
 show_object_target(const struct coordinates crd)
@@ -64,6 +65,11 @@ display_object(enum object obj, const struct coordinates crd)
 		case dot_obj:
 			set_color(black_on_black);
 			addch(symbol_dot);
+			break;
+		case game_title_obj:
+			const char *game_title = " Simple Snake Game ";
+			set_color(green_on_black);
+			addstr(game_title);
 			break;
 	}
 	refresh();
