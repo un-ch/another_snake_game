@@ -1,11 +1,9 @@
 #include <ncurses.h>
 #include <stdlib.h>
-
 #include "end_program.h"
 #include "display_message.h"
 
-void
-end(enum end_type how)
+void end(enum end_type how)
 {
 	switch(how) {
 		case quit:
@@ -17,6 +15,5 @@ end(enum end_type how)
 	}
 	clear();
 	endwin(); /* restore terminal after ncurses activity: */
-
 	exit(exit_success_code);
 }

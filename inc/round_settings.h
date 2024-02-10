@@ -11,21 +11,18 @@ typedef struct {
 } round_settings; 
 
 void set_objects_another_round(
-	struct coordinates_deque *snake,
-	struct coordinates_list **target,
-	struct coordinates_list **barrier,
+	coordinates_deque *snake,
+	coordinates_list **target,
+	coordinates_list **barrier,
 	const round_settings rnd_stt,
-	struct coordinates *crd);
+	coordinates *crd);
 
 void set_settings_initial_round(round_settings *rnd_stt);
-
 void game_settings_increase(round_settings *rnd_stt);
-
 void game_settings_decrease(round_settings *rnd_stt);
-
 void update_after_contact_with_target(
 	round_settings *rnd_stt,
-	struct coordinates_deque *snake,
-	struct coordinates crd);
+	coordinates_deque *snake,
+	coordinates crd);
 
 #endif

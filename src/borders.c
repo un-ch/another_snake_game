@@ -1,5 +1,5 @@
 #include <ncurses.h>
-
+#include "user_types.h"
 #include "borders.h"
 #include "string.h"
 #include "color.h"
@@ -12,7 +12,7 @@ extern game_field g_game_field;
 void display_borders_with_game_title(void)
 {
 	int border_row_count, border_column_count;
-	struct coordinates crd;
+	coordinates crd;
 
 	set_game_field_parametres();
 
@@ -34,7 +34,7 @@ void display_borders_with_game_title(void)
 	display_object(game_title_obj, crd);
 }
 
-int is_contact_with_borders(const struct coordinates snake_head)
+int is_contact_with_borders(const coordinates snake_head)
 {
 	int result = FALSE;
 	int min_screen_pixel_x = g_game_field.begin_x + 2;

@@ -1,14 +1,9 @@
-#ifndef SNAKE_OBJECT_H_SENTRY
-#define SNAKE_OBJECT_H_SENTRY
+#ifndef SNAKE_OBJECT_H
+#define SNAKE_OBJECT_H
 
-#include "coordinates.h"
+#include "user_types.h"
 
-void
-move_snake_object(struct coordinates_deque *snake,
-					struct coordinates direction);
-
-void
-add_new_snake_element(struct coordinates_deque *snake,
-								struct coordinates crd);
+void move_snake_object(coordinates_deque *snake, coordinates direction);
+void add_new_snake_element(coordinates_deque *snake, coordinates crd);
 
 #endif

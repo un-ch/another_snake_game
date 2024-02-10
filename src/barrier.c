@@ -1,10 +1,11 @@
+#include "user_types.h"
 #include "barrier.h"
 #include "coordinates.h"
 #include "objects.h"
 
-int is_contact_with_barrier(const struct coordinates snake_head, const struct coordinates_list *barrier)
+int is_contact_with_barrier(const coordinates snake_head, const coordinates_list *barrier)
 {
-	const struct coordinates_list *temp = barrier;
+	const coordinates_list *temp = barrier;
 	int result = FALSE;
 
 	while(temp) {
@@ -18,9 +19,9 @@ int is_contact_with_barrier(const struct coordinates snake_head, const struct co
 	return result;
 }
 
-void display_barrier_in_fog_of_war(struct coordinates snake_head, struct coordinates_list *barrier)
+void display_barrier_in_fog_of_war(coordinates snake_head, coordinates_list *barrier)
 {
-	struct coordinates_list *temp = barrier;
+	coordinates_list *temp = barrier;
 	int x_max, x_min, y_max, y_min;
 
 	x_max = snake_head.x + 5;
@@ -39,9 +40,9 @@ void display_barrier_in_fog_of_war(struct coordinates snake_head, struct coordin
 	}
 }
 
-void display_barrier(struct coordinates_list *barrier)
+void display_barrier(coordinates_list *barrier)
 {
-	struct coordinates_list *temp = barrier;
+	coordinates_list *temp = barrier;
 
 	while(temp) {
 		display_object(barrier_obj, temp->coord);

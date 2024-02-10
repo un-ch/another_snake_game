@@ -1,5 +1,5 @@
-#ifndef END_PROGRAM_H_SENTRY
-#define END_PROGRAM_H_SENTRY
+#ifndef END_PROGRAM_H
+#define END_PROGRAM_H
 
 enum { exit_success_code = 0 };
 
@@ -8,7 +8,6 @@ enum end_type {
 	win		= 2
 };
 
-void
-end(enum end_type how);
+void end(enum end_type how);
 
 #endif

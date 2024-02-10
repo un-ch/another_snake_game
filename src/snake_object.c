@@ -1,14 +1,11 @@
 #include <stdlib.h>
-
+#include "user_types.h"
 #include "snake_object.h"
-#include "coordinates.h"
 #include "objects.h"
 
-void
-move_snake_object(struct coordinates_deque *snake,
-					struct coordinates direction)
+void move_snake_object(coordinates_deque *snake, coordinates direction)
 {
-	struct coordinates_doubly_list *temp;
+	coordinates_doubly_list *temp;
 
 	temp = snake->first;
 
@@ -44,13 +41,11 @@ move_snake_object(struct coordinates_deque *snake,
 	}
 }
 
-void
-add_new_snake_element(struct coordinates_deque *snake,
-								struct coordinates crd)
+void add_new_snake_element(coordinates_deque *snake, coordinates crd)
 {
-	struct coordinates_doubly_list *temp;
+	coordinates_doubly_list *temp;
 
-	temp = malloc(sizeof(struct coordinates_doubly_list));
+	temp = malloc(sizeof(coordinates_doubly_list));
 	temp->coord.x = crd.x;
 	temp->coord.y = crd.y;
 	temp->prev = snake->last;

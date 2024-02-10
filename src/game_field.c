@@ -1,5 +1,5 @@
 #include	<ncurses.h>
-
+#include "user_types.h"
 #include "game_field.h"
 #include "objects.h"
 #include "borders.h"
@@ -19,7 +19,7 @@ void clear_screen(void)
 {
 	int screen_pixel_x;
 	int screen_pixel_y = g_game_field.begin_y + 1;
-	struct coordinates crd;
+	coordinates crd;
 
 	clear();
 	refresh();
