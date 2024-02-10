@@ -4,13 +4,15 @@
 #include "string.h"
 #include "color.h"
 #include "game_field.h"
+#include "objects.h"
+#include "coordinates.h"
 
 extern game_field g_game_field;
 
 void display_borders_with_game_title(void)
 {
-	const char *game_title = "Simple Snake Game";
 	int border_row_count, border_column_count;
+	struct coordinates crd;
 
 	set_game_field_parametres();
 
@@ -25,11 +27,11 @@ void display_borders_with_game_title(void)
 
 	box(game_border, 0, 0);
 	wrefresh(game_border);
-	set_color(magenta_on_black);
 
-	/* print the game title in the middle of the top border: */
-	mvwprintw(stdscr, g_game_field.begin_y, (border_column_count / 2), " %s ", game_title);
-	refresh();
+	crd.x = border_column_count / 2;
+	crd.y = g_game_field.begin_y;
+
+	display_object(game_title_obj, crd);
 }
 
 int is_contact_with_borders(const struct coordinates snake_head)
