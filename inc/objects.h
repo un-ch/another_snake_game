@@ -16,8 +16,7 @@ enum object {
 	snake_obj,
 	barrier_obj,
 	blank_obj,
-	dot_obj,
-	game_title_obj
+	dot_obj
 };
 
 void show_object_target(const coordinates crd);
