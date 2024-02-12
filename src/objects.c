@@ -4,7 +4,6 @@
 #include "color.h"
 #include "display_message.h"
 
-static const char *game_title = " Simple Snake Game ";
 
 void show_object_target(const coordinates crd)
 {
@@ -61,10 +60,6 @@ void display_object(enum object obj, const coordinates crd)
 		case dot_obj:
 			set_color(black_on_black);
 			addch(symbol_dot);
-			break;
-		case game_title_obj:
-			set_color(green_on_black);
-			addstr(game_title);
 			break;
 	}
 	refresh();
