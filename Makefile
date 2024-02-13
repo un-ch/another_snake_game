@@ -3,7 +3,7 @@ CFLAGS=	-Wall -I
 
 # directories definitions:
 BUILD_DIR=	build
-INCLUDE_DIR=	inc
+INCLUDE_DIR=	include
 SRC_DIR=	src
 
 SRC_FILES = $(filter-out $(SRC_DIR)/another_snake_game.c, $(wildcard $(SRC_DIR)/*.c))
