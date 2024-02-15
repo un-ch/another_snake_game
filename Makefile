@@ -34,4 +34,4 @@ clean:
 
 .PHONY: tags
 tags:
-	@ctags inc/*.h src/*.c
+	@ctags include/*.h src/*.c
