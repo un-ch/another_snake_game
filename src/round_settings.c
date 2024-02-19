@@ -48,7 +48,7 @@ set_settings_initial_round(struct round_settings *rnd_stt)
 	int barrier_amount;
 
 	getmaxyx(stdscr, max_screen_value_y, max_screen_value_x);
-	barrier_amount = (max_screen_value_y + max_screen_value_x) * 5;
+	barrier_amount = max_screen_value_y + max_screen_value_x;
 	rnd_stt->round_num = 1;
 	rnd_stt->current_snake_length = 1;
 	rnd_stt->snake_speed = 200;
