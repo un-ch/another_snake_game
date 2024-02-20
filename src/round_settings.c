@@ -7,7 +7,7 @@
 #include "display_message.h"
 #include "snake_object.h"
 #include "target.h"
-#include "screen.h"
+#include "game_field.h"
 #include "dot_background.h"
 
 void set_objects_another_round(

@@ -2,7 +2,7 @@
 #include <stdlib.h> /* for srand() */
 #include <ncurses.h>
 #include "user_types.h"
-#include "screen.h"
+#include "game_field.h"
 #include "string.h"
 #include "display_message.h"
 #include "end_program.h"

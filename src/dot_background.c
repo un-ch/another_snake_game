@@ -2,20 +2,20 @@
 #include "user_types.h"
 #include "dot_background.h"
 #include "color.h"
-#include "screen.h"
+#include "game_field.h"
 #include "objects.h"
 #include "coordinates.h"
 
-extern screen g_screen;
+extern game_field g_game_field;
 
 void display_dot_background()
 {
 	int screen_pixel_x;
-	int screen_pixel_y = g_screen.begin_y + 1;
+	int screen_pixel_y = g_game_field.begin_y + 1;
 	coordinates crd;
 
-	for(; screen_pixel_y < (g_screen.end_y - 1); screen_pixel_y++) {
-		for(screen_pixel_x = g_screen.begin_x + 1; screen_pixel_x < (g_screen.end_x - 1); screen_pixel_x++) {
+	for(; screen_pixel_y < (g_game_field.end_y - 1); screen_pixel_y++) {
+		for(screen_pixel_x = g_game_field.begin_x + 1; screen_pixel_x < (g_game_field.end_x - 1); screen_pixel_x++) {
 			crd.y = screen_pixel_y;
 			crd.x = screen_pixel_x;
 			display_object(dot_obj, crd);

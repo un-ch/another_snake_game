@@ -1,7 +1,7 @@
 #include <ncurses.h>
 
 #include "continue_game_request.h"
-#include "screen.h"
+#include "game_field.h"
 #include "string.h"
 #include "color.h"
 
