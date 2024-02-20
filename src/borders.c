@@ -11,6 +11,8 @@ void display_borders_with_game_title(void)
 {
 	const char *game_title = "Simple Snake Game";
 	int border_lines_num, border_column_num;
+	const int title_length = string_length(game_title);
+	coordinates game_title_position;
 
 	set_color(magenta_on_black);
 	set_screen_parametres();
@@ -25,12 +27,14 @@ void display_borders_with_game_title(void)
 	/* 	g_game_field.begin_x); */
 
 	box(stdscr, 0, 0);
-	wrefresh(stdscr);
 
-	set_color(magenta_on_black);
+	game_title_position.x =
+		(g_game_field.end_x - title_length + g_game_field.begin_x) / 2;
+	game_title_position.y = g_game_field.begin_y;
 
 	/* print the game title in the middle of the top border: */
-	mvwprintw(stdscr, g_game_field.begin_y, (border_column_num / 2), " %s ", game_title);
+	mvwprintw(stdscr, game_title_position.y, game_title_position.x, " %s ", game_title);
+	refresh();
 }
 
 int is_contact_with_borders(const coordinates snake_head)
