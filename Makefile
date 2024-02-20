@@ -31,3 +31,7 @@ run: another_snake_game
 .PHONY: clean
 clean:
 	@rm -f	$(BUILD_DIR)/*.o $(BUILD_DIR)/another_snake_game
+
+.PHONY: tags
+tags:
+	@ctags include/*.h src/*c
