@@ -12,20 +12,20 @@ void display_borders_with_game_title(void)
 	const char *game_title = "Simple Snake Game";
 	int border_lines_num, border_column_num;
 
-	set_color(black_on_white);
+	set_color(magenta_on_black);
 	set_screen_parametres();
 
-	border_lines_num = g_game_field.end_y - g_game_field.begin_y;
 	border_column_num = g_game_field.end_x - g_game_field.begin_x;
 
-	WINDOW *game_border = newwin(
-		border_lines_num,
-		border_column_num,
-		g_game_field.begin_y,
-		g_game_field.begin_x);
+	/* border_lines_num = g_game_field.end_y - g_game_field.begin_y; */
+	/* WINDOW *game_border = newwin( */
+	/* 	border_lines_num, */
+	/* 	border_column_num, */
+	/* 	g_game_field.begin_y, */
+	/* 	g_game_field.begin_x); */
 
-	box(game_border, 0, 0);
-	wrefresh(game_border);
+	box(stdscr, 0, 0);
+	wrefresh(stdscr);
 
 	set_color(magenta_on_black);
 
