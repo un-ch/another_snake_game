@@ -1,5 +1,5 @@
 #include <ncurses.h>
-
+#include "user_types.h"
 #include "borders.h"
 #include "string.h"
 #include "color.h"
@@ -33,7 +33,7 @@ void display_borders_with_game_title(void)
 	mvwprintw(stdscr, g_screen.begin_y, (border_column_num / 2), " %s ", game_title);
 }
 
-int is_contact_with_borders(const struct coordinates snake_head)
+int is_contact_with_borders(const coordinates snake_head)
 {
 	int result = FALSE;
 	int min_screen_pixel_x = g_screen.begin_x + 2;

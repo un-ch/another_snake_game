@@ -1,12 +1,13 @@
-#ifndef HANDLE_DIRECTION_H_SENTRY
-#define HANDLE_DIRECTION_H_SENTRY
+#ifndef HANDLE_DIRECTION_H
+#define HANDLE_DIRECTION_H
 
-#include "coordinates.h"
+#include "user_types.h"
 
 enum { key_spacebar = ' ' };
 
-void
-handle_direction_signal(int signal, struct coordinates *crd,
-							struct coordinates_deque *snake);
+void handle_direction_signal(
+	int signal,
+	coordinates *crd,
+	coordinates_deque *snake);
 
 #endif

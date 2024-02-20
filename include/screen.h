@@ -1,7 +1,7 @@
-#ifndef SCREEN_H_SENTRY
-#define SCREEN_H_SENTRY
+#ifndef SCREEN_H
+#define SCREEN_H
 
-typedef struct {
+typedef struct screen {
 	int begin_x;
 	int begin_y;
 	int end_x;

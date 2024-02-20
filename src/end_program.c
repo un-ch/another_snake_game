@@ -4,8 +4,7 @@
 #include "end_program.h"
 #include "display_message.h"
 
-void
-end(enum end_type how)
+void end(enum end_type how)
 {
 	switch(how) {
 		case quit:

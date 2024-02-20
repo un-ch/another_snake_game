@@ -6,8 +6,7 @@
 #include "screen.h"
 #include "color.h"
 
-void
-display_message_center(const char *string)
+void display_message_center(const char *string)
 {
 	int max_screen_value_y, max_screen_value_x;
 	int string_len;
@@ -22,8 +21,7 @@ display_message_center(const char *string)
 	sleep(2);
 }
 
-void
-display_round_number(const int number)
+void display_round_number(const int number)
 {
 	static const char *message = "Round";
 	int max_screen_value_y, max_screen_value_x;

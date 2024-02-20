@@ -2,8 +2,7 @@
 
 #include "color.h"
 
-void
-set_color(enum fgr_bgr_colors colors)
+void set_color(enum fgr_bgr_colors colors)
 {
 	switch(colors) {
 		case black_on_black:

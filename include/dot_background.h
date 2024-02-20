@@ -1,12 +1,9 @@
-#ifndef DOT_BACKGROUND_H_SENTRY
-#define DOT_BACKGROUND_H_SENTRY
+#ifndef DOT_BACKGROUND_H
+#define DOT_BACKGROUND_H
 
-#include "coordinates.h"
+#include "user_types.h"
 
-void
-display_dot_background();
-
-void
-display_dot_background_in_fog_of_war(const struct coordinates snake);
+void display_dot_background();
+void display_dot_background_in_fog_of_war(const coordinates snake);
 
 #endif

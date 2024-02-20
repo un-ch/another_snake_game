@@ -5,8 +5,7 @@
 #include "string.h"
 #include "color.h"
 
-int
-affirmative_answer_to_continue_game_request()
+int affirmative_answer_to_continue_game_request()
 {
 	int result = FALSE;
 	int max_screen_value_y, max_screen_value_x;

@@ -1,7 +1,6 @@
 #include "string.h"
 
-int
-string_length(const char *string)
+int string_length(const char *string)
 {
 	const char *temp_string = string;
 
@@ -12,8 +11,7 @@ string_length(const char *string)
 	return (temp_string - string);
 }
 
-int
-is_equal_strings(const char *string, const char *str_pattern)
+int is_equal_strings(const char *string, const char *str_pattern)
 {
 	int result = TRUE;
 

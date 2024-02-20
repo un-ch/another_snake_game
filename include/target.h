@@ -1,22 +1,15 @@
-#ifndef TARGET_H_SENTRY
-#define TARGET_H_SENTRY
+#ifndef TARGET_H
+#define TARGET_H
 
-#include "coordinates.h"
+#include "user_types.h"
 
-#define TRUE	1
-#define FALSE	0
+#define TRUE 1
+#define FALSE 0
 
 enum { max_target_amount = 10 };
 
-int
-is_contact_with_target(const struct coordinates crd,
-					struct coordinates_list *target);
-
-void
-display_target_in_fog_of_war(struct coordinates snake,
-						struct coordinates_list *target);
-
-void
-display_target(struct coordinates_list *target);
+int is_contact_with_target(const coordinates crd, coordinates_list *target);
+void display_target_in_fog_of_war(coordinates snake, coordinates_list *target);
+void display_target(coordinates_list *target);
 
 #endif

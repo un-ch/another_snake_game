@@ -1,11 +1,10 @@
 #include <ncurses.h>
-
+#include "user_types.h"
 #include "objects.h"
 #include "coordinates.h"
 #include "color.h"
 
-void 
-show_object_target(const struct coordinates crd)
+void show_object_target(const coordinates crd)
 {
 	move(crd.y, crd.x);
 	set_color(black_on_white);
@@ -13,8 +12,7 @@ show_object_target(const struct coordinates crd)
 	refresh();
 }
 
-void 
-show_object_snake(const struct coordinates crd)
+void show_object_snake(const coordinates crd)
 {
 	move(crd.y, crd.x);
 	set_color(red_on_white);
@@ -22,8 +20,7 @@ show_object_snake(const struct coordinates crd)
 	refresh();
 }
 
-void 
-show_object_barrier(const struct coordinates crd)
+void show_object_barrier(const coordinates crd)
 {
 	move(crd.y, crd.x);
 	set_color(black_on_white);
@@ -31,8 +28,7 @@ show_object_barrier(const struct coordinates crd)
 	refresh();
 }
 
-void
-hide_object(const struct coordinates crd)
+void hide_object(const coordinates crd)
 {
 	move(crd.y, crd.x);
 	set_color(black_on_white);
@@ -40,8 +36,7 @@ hide_object(const struct coordinates crd)
 	refresh();
 }
 
-void
-display_object(enum object obj, const struct coordinates crd)
+void display_object(enum object obj, const coordinates crd)
 {
 	move(crd.y, crd.x);
 	switch(obj) {

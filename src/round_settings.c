@@ -1,7 +1,7 @@
-#include <stddef.h>			/* for NULL */
-#include <ncurses.h>		/* for getmaxyx() */
-#include <borders.h>
-
+#include <stddef.h> /* for NULL */
+#include <ncurses.h> /* for getmaxyx() */
+#include "user_types.h"
+#include "borders.h"
 #include "round_settings.h"
 #include "coordinates.h"
 #include "display_message.h"
@@ -11,13 +11,13 @@
 #include "dot_background.h"
 
 void set_objects_another_round(
-		struct coordinates_deque *snake,
-		struct coordinates_list **target,
-		struct coordinates_list **barrier,
-		const struct round_settings rnd_stt,
-		struct coordinates *crd)
+		coordinates_deque *snake,
+		coordinates_list **target,
+		coordinates_list **barrier,
+		const round_settings rnd_stt,
+		coordinates *crd)
 {
-	struct coordinates snake_head;
+	coordinates snake_head;
 
 	if(*target) {
 		delete_coordinate_list(target);
@@ -41,8 +41,7 @@ void set_objects_another_round(
 	display_dot_background();
 }
 
-void
-set_settings_initial_round(struct round_settings *rnd_stt)
+void set_settings_initial_round(round_settings *rnd_stt)
 {
 	int max_screen_value_x, max_screen_value_y;
 	int barrier_amount;
@@ -55,8 +54,7 @@ set_settings_initial_round(struct round_settings *rnd_stt)
 	rnd_stt->max_barrier_amount = barrier_amount;
 }
 
-void
-game_settings_increase(struct round_settings *rnd_stt)
+void game_settings_increase(round_settings *rnd_stt)
 {
 	rnd_stt->round_num += 1;
 	rnd_stt->current_snake_length = 1;
@@ -64,8 +62,7 @@ game_settings_increase(struct round_settings *rnd_stt)
 	rnd_stt->max_barrier_amount += 150;
 }
 
-void
-game_settings_decrease(struct round_settings *rnd_stt)
+void game_settings_decrease(round_settings *rnd_stt)
 {
 	rnd_stt->round_num -= 1;
 	rnd_stt->current_snake_length = 1;
@@ -73,12 +70,12 @@ game_settings_decrease(struct round_settings *rnd_stt)
 	rnd_stt->max_barrier_amount -= 150;
 }
 
-void
-update_after_contact_with_target(struct round_settings *rnd_stt,
-								struct coordinates_deque *snake,
-										struct coordinates crd)
+void update_after_contact_with_target(
+	round_settings *rnd_stt,
+	coordinates_deque *snake,
+	coordinates crd)
 {
-	struct coordinates temp;
+	coordinates temp;
 
 	temp.x = snake->last->coord.x - crd.x;
 	temp.y = snake->last->coord.y - crd.y;

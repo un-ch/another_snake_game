@@ -1,7 +1,7 @@
-#include <time.h>		/*	for time	*/
-#include <stdlib.h>		/*	for srand	*/
+#include <time.h> /* for time() */
+#include <stdlib.h> /* for srand() */
 #include <ncurses.h>
-
+#include "user_types.h"
 #include "screen.h"
 #include "string.h"
 #include "display_message.h"
@@ -33,12 +33,12 @@ int main()
 	noecho();
 	curs_set(0);
 
-	struct coordinates_deque snake;
+	coordinates_deque snake;
 	snake.first = NULL;
 	snake.last = NULL;
-	struct coordinates_list *target = NULL, *barrier = NULL;
-	struct coordinates coordinate;
-	struct round_settings round_settngs;
+	coordinates_list *target = NULL, *barrier = NULL;
+	coordinates coordinate;
+	round_settings round_settngs;
 	int direction_signal;
 
 	set_settings_initial_round(&round_settngs);
