@@ -33,6 +33,7 @@ void set_objects_another_round(
 	crd->y = 0;
 
 	clear_screen();
+	display_borders_with_game_title();
 	display_round_number(rnd_stt.round_num);
 	set_random_coordinates(&snake_head);
 	add_new_snake_element(snake, snake_head);

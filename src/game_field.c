@@ -23,7 +23,6 @@ void clear_screen(void)
 
 	clear();
 	refresh();
-	display_borders_with_game_title();
 
 	for(; screen_pixel_y < (g_game_field.end_y - 1); screen_pixel_y++) {
 		for(screen_pixel_x = g_game_field.begin_x + 1; screen_pixel_x < (g_game_field.end_x - 1); screen_pixel_x++) {
