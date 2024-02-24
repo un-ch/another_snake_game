@@ -30,12 +30,13 @@ void display_round_number(const int number)
 	coordinates round_message_position;
 
 	round_message_position.x =
-		(g_game_field.end_x - string_len - g_game_field.begin_x) / 2;
+		(g_game_field.end_x - string_len + g_game_field.begin_x) / 2;
 	round_message_position.y = g_game_field.end_y / 2;
 
 	set_color(green_on_black);
 
 	mvwprintw(stdscr, round_message_position.y, round_message_position.x, "%s %d", round_message, number);
+
 	refresh();
 	sleep(2);
 }
