@@ -23,7 +23,24 @@ void display_borders_with_game_title(void)
 
 	/* print the game title in the middle of the top border: */
 	mvwprintw(stdscr, game_title_position.y, game_title_position.x, " %s ", game_title);
+	display_pitch_border();
+
 	wrefresh(stdscr);
+}
+
+void display_pitch_border(void)
+{
+	const char *wall_symbol = "[o]";
+
+	int x = g_game_field.begin_x;
+	int y = g_game_field.begin_y + 1;
+	int end_x = g_game_field.end_x;
+	int end_y = g_game_field.end_y - 1;
+
+	while(y < end_y) {
+		mvwprintw(stdscr, y, x, "%s", wall_symbol);
+		y++;
+	}
 }
 
 int is_contact_with_borders(const coordinates snake_head)

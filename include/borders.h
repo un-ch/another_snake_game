@@ -9,6 +9,7 @@
 enum { false_exit_code = 0 };
 
 void display_borders_with_game_title(void);
+void display_pitch_border(void);
 int is_contact_with_borders(const coordinates crd);
 
 #endif
