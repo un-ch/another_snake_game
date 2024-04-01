@@ -9,4 +9,5 @@ Launch the game:<br>
 <code>make run</code></li>
 
 <!-- ![example](https://raw.githubusercontent.com/un-ch/another_snake_game/main/screenshot.png) -->
+
 ![example](https://github.com/un-ch/another_snake_game/blob/main_loop_refactoring/screenshot.png)
