@@ -7,5 +7,6 @@ Game installation:<br>
 </ol>
 Launch the game:<br>
 <code>make run</code></li><br>
+<br/>
 
 ![example](https://github.com/un-ch/another_snake_game/blob/main_loop_refactoring/screenshot.png)
